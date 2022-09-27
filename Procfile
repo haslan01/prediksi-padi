@@ -1,1 +1,1 @@
-web: gunicorn wilda2:app
+web: gunicorn app:app

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Constantia;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+ 
+}
+</style>
+</head>
+<body>
+<table>
+	<tr>
+	 <td>
+<div class="container" style="width: 700px;">
+<br><br>
+<h3>PREDIKSI HASIL PANEN PADI DESA MINANGA</h3>
+<br> 
+    <form action="{{ url_for('result')}}"method="post">
+		<table>
+			<tr>
+				<td width="500px"><label for="Luas_Lahan">Luas Lahan</label></td>
+				<td width="4000px"><input type="text" name="Luas_Lahan" ></td>
+				
+				<td width="1000px"></td>
+			</tr>
+			<tr>
+				<td><label for="Jumlah_Bibit">Jumlah Bibit</label></td>
+				<td width="1000px"><input type="text" name="Jumlah_Bibit" ></td>
+			</tr>
+			<tr>
+				<td><label for="Jenis_Pupuk">Jenis Pupuk</label></td>
+				<td width="1000px">
+				<select id="Jenis_Pupuk" name="Jenis_Pupuk">
+					<option >-- Pilih Pupuk --</option>
+					<option value="0">Urea NPK</option>
+					<option value="1">Urea ZA</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="Curah_Hujan">Curah Hujan</label></td>
+				<td width="1000px">
+				<select id="Curah_Hujan" name="Curah_Hujan">
+					<option >-- Curah Hujan --</option>
+					<option value="0">Normal</option>
+					<option value="1">Tinggi</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="Hama_Gulma">Hama dan Gulma</label></td>
+				<td width="1000px">
+				<input type="text" name="Hama_Gulma" >
+				</td>
+			</tr>
+			<tr>
+				<td><label for="Pengendalian_Hama_Gulma">Pengendalian Hama dan Gulma</label></td>
+				<td width="1000px">
+				<select id="Pengendalian_Hama_Gulma" name="Pengendalian_Hama_Gulma">
+					<option >-- Pengendali Hama --</option>
+					<option value="1">Pestisida</option>
+					<option value="2">Pestisida dan Penyiangan</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="Jajar_Legowo">Jajar Legowo</label></td>
+				<td width="1000px">
+				<select id="Jajar_Legowo" name="Jajar_Legowo">
+					<option >-- Pilih Legowo --</option>
+					<option value="0">Tidak</option>
+					<option value="1">Ya</option>
+				</select>
+				</td>
+			</tr>
+		</table>
+		<input type="submit" value="PREDIKSI">
+	</form>
+
+</div>
+		</td>
+		<td >
+		<div class="container" style="width: 700px;" align="top">
+		<h4>Berdasarkan perhitungan inputan dari kriteria maka di bawah adalah hasil prediksi.
+		<h4>{{ result_text }}</h4>
+		</div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

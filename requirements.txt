@@ -1,2 +1,4 @@
-Flask==1.0.2
-numpy==1.23.3
+numpy
+flask
+gunicorn
+scikit-learn
